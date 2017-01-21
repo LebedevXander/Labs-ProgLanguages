@@ -18,18 +18,34 @@ r = requests.get("https://api.meetup.com/2/open_events", params=payload)
 print("Status code: ", r.status_code)
 response = r.json()
 
+weekday = [
+	'Monday',
+	'Tuesday',
+	'Wednesday',
+	'Thursday',
+	'Friday',
+	'Saturday',
+	'Sunday'
+	]
+curWeekday = -1;
+
 html_text = '<!DOCTYPE html><body>'
 for meet in response['results']:
 	print('***************************************')
+	meet_time = datetime.datetime.fromtimestamp(int(meet['time']/1000))
+	if curWeekday != meet_time.weekday():
+		curWeekday = meet_time.weekday()
+		html_text += '<h2>' + weekday[curWeekday]+ '</h2>'
+	
+	print()
 	meet_name = meet['name']
 	print(meet_name)
 	html_text += '<h3>' + meet_name + '</h3>'
 	
 	print()
-	rawtime = int(meet['time']/1000)
-	meet_time = datetime.datetime.fromtimestamp(rawtime).strftime('%Y-%m-%d %H:%M:%S')
-	print(meet_time)
-	html_text += '<p>' + meet_time + '</p>'
+	meet_time_str = meet_time.strftime('%Y-%m-%d %H:%M:%S')
+	print(meet_time_str)
+	html_text += '<p>' + meet_time_str + '</p>'
 	
 	if 'description' in meet:
 		print()
@@ -43,6 +59,8 @@ for meet in response['results']:
 		meet_address = meet_venue['city'] + ', ' + meet_venue['address_1'] + ', ' + meet_venue['name']
 		print(meet_address)
 		html_text += '<p>' + meet_address + '</p>'
+	
+	print()
 	print('***************************************')
 html_text += '</body>'
 
