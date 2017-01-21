@@ -1,0 +1,42 @@
+{
+'utc_offset': -21600000,
+'venue': 
+	{
+	'country': 'US', 
+	'localized_country_name': 'USA',
+	'city': 'Houston', 
+	'address_1': '5629 Southwest Fwy', 
+	'name': 'Exitus VR',
+	'lon': -95.47826, 
+	'id': 24950837, 
+	'lat': 29.725193, 
+	'repinned': False
+	},
+'rsvp_limit': 30,
+'headcount': 0, 
+'distance': 15.531961441040039, 
+'visibility': 'public',
+'waitlist_count': 0, 
+'created': 1484069748000, '
+maybe_rsvp_count': 0, 
+'how_to_find_us': 'North/East bound feeder road of 59. You can park in front or next door in front of Fred Loya. Carpooling encouraged.', 
+'event_url': 'https://www.meetup.com/Houston-VR-Development-Meetup/events/236820917/', 
+'yes_rsvp_count': 10,
+'duration': 7200000, 
+'name': 'Second Houston VR Developers Meetup', 
+'id': '236820917', 
+'time': 1485104400000, 
+'updated': 1484069748000, 
+'group': 
+	{
+	'join_mode': 'open', 
+	'created': 1474683799000, 
+	'name': 'Houston VR Development Meetup', 
+	'group_lon': -95.22000122070312, 
+	'id': 20461277, 
+	'urlname': 'Houston-VR-Development-Meetup', 
+	'group_lat': 29.719999313354492, 
+	'who': 'Developers'
+	}, 
+'status': 'upcoming'
+}
